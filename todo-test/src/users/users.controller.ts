@@ -12,13 +12,13 @@ export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @Get('/')
-  findAll() {
-    return this.usersService.findAll();
+  async findAll() {
+    return await this.usersService.findAllPublic();
   }
 
   @UseGuards(AuthGuard)
   @Put('/:id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto, @CurrentUser() currentUser: User) {
+  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto, @CurrentUser() currentUser: User) {
     if (id !== currentUser.id) throw new ForbiddenException('You can only update your own profile');
     return this.usersService.update(id, updateUserDto);
   }

@@ -14,6 +14,14 @@ export class UsersService {
     return this.usersRepository.find();
   };
 
+  findAllPublic = async (): Promise<Array<{ id: string; username: string }>> => {
+    const users = await this.usersRepository.find();
+    return users.map((user: User) => ({
+      id: user.id,
+      username: user.username,
+    }));
+  };
+
   findOneByEmail = async (email: string): Promise<User | null> => {
     return this.usersRepository.findOne({ where: { email } });
   };
