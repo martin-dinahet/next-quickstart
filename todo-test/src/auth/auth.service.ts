@@ -20,4 +20,16 @@ export class AuthService {
       }),
     };
   };
+
+  signUp = async (username: string, email: string, password: string): Promise<{ access_token: string }> => {
+    const existingUser = await this.usersService.findOneByEmail(email);
+    if (existingUser) throw new UnauthorizedException('User with this email already exists');
+    const newUser = await this.usersService.create(username, email, password);
+    return {
+      access_token: await this.jwtService.signAsync({
+        sub: newUser.id,
+        email: newUser.email,
+      }),
+    };
+  };
 }
