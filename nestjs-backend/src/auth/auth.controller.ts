@@ -41,7 +41,7 @@ export class AuthController {
 
   @UseGuards(AuthGuard)
   @Put('profile')
-  updateProfile(@Request() req: ProfileRequest, updateUserDto: UpdateUserDto) {
+  updateProfile(@Request() req: ProfileRequest, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(req.user.id, updateUserDto);
   }
 
