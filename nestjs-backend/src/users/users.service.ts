@@ -1,3 +1,5 @@
+import * as bcrypt from 'bcrypt';
+
 import { Injectable } from '@nestjs/common';
 import { NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
@@ -36,7 +38,10 @@ export class UsersService {
 
   update = async (id: string, updateUserDto: UpdateUserDto): Promise<User | null> => {
     const user = await this.usersRepository.findOne({ where: { id } });
-    if (!user) throw new NotFoundException();
+    if (!user) throw new NotFoundException('User not found');
+    if (updateUserDto.password) {
+      updateUserDto.password = await bcrypt.hash(updateUserDto.password, 10);
+    }
     await this.usersRepository.update(id, updateUserDto);
     return this.usersRepository.findOne({ where: { id } });
   };
