@@ -15,18 +15,4 @@ export class UsersController {
   async findAll() {
     return await this.usersService.findAllPublic();
   }
-
-  @UseGuards(AuthGuard)
-  @Put('/:id')
-  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto, @CurrentUser() currentUser: User) {
-    if (id !== currentUser.id) throw new ForbiddenException('You can only update your own profile');
-    return this.usersService.update(id, updateUserDto);
-  }
-
-  @UseGuards(AuthGuard)
-  @Delete('/:id')
-  async delete(@Param('id') id: string, @CurrentUser() currentUser: User) {
-    if (id !== currentUser.id) throw new ForbiddenException('You can only delete yourself');
-    return this.usersService.delete(id);
-  }
 }

@@ -1,6 +1,6 @@
 services:
   backend:
-    build: ./todo-test
+    build: ./nestjs-backend
     ports:
       - "3000:3000"
     environment:
