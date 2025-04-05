@@ -40,4 +40,9 @@ export class UsersService {
     await this.usersRepository.update(id, updateUserDto);
     return this.usersRepository.findOne({ where: { id } });
   };
+
+  delete = async (id: string): Promise<void> => {
+    const result = await this.usersRepository.delete(id);
+    if (!result.affected) throw new NotFoundException('User not found');
+  };
 }
