@@ -1,16 +1,18 @@
 import { Entity } from 'typeorm';
 import { Column } from 'typeorm';
 import { PrimaryGeneratedColumn } from 'typeorm';
-import { TodoStatus } from '../todo.type';
 
 @Entity()
-export class Todo {
+export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  title: string;
+  username: string;
 
   @Column()
-  status: TodoStatus;
+  email: string;
+
+  @Column()
+  password: string;
 }
