@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { Index } from "@/pages/index";
+import { IndexPage } from "@/pages/index";
 import { MainLayout } from "@/layouts/main-layout";
 
 import "./index.css";
@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Index />} />
+          <Route index element={<IndexPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
