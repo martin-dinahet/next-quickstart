@@ -13,6 +13,14 @@ services:
       - db
     restart: unless-stopped
 
+  frontend:
+    build: ./react-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
   db:
     image: mysql:8.0
     ports:
