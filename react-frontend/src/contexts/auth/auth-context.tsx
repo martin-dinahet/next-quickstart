@@ -62,12 +62,11 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       toast("Error: login failed");
       throw new Error("Authentication error: login failed");
     }
-    const data = await response.json();
-    const { token } = data;
-    localStorage.setItem("token", token);
-    setToken(token);
+    const { access_token } = await response.json();
+    localStorage.setItem("token", access_token);
+    setToken(access_token);
     toast("Logged in successfully.");
-    await fetchUserProfile(token);
+    await fetchUserProfile(access_token);
   };
 
   const register = async (username: string, email: string, password: string) => {
