@@ -4,12 +4,14 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --force
 
 COPY . .
 
 RUN npm run build
 
+RUN npm install -g serve
+
 EXPOSE 5173
 
-CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
+CMD ["serve", "-s", "dist", "-l", "5173"]
