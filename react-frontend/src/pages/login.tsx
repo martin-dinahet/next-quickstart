@@ -14,8 +14,6 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth/auth-context";
 import { useNavigate } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
-
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -64,9 +62,9 @@ export const LoginPage: React.FC = () => {
           </CardContent>
           <CardFooter>
             <Button className="w-full" variant="ghost" asChild>
-              <NavLink to="/register">
+              <a href="/register">
                 First time here? <span className="underline">Register</span>
-              </NavLink>
+              </a>
             </Button>
           </CardFooter>
         </Card>

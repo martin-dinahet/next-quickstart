@@ -14,8 +14,6 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth/auth-context";
 import { useNavigate } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
-
 export const RegisterPage: React.FC = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
@@ -75,9 +73,9 @@ export const RegisterPage: React.FC = () => {
           </CardContent>
           <CardFooter>
             <Button className="w-full" variant="ghost" asChild>
-              <NavLink to="/login">
+              <a href="/login">
                 Already have an account ? <span className="underline">Log In</span>
-              </NavLink>
+              </a>
             </Button>
           </CardFooter>
         </Card>
