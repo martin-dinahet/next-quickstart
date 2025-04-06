@@ -58,7 +58,10 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       },
       body: JSON.stringify({ email, password }),
     });
-    if (!response.ok) throw new Error("Authentication error: login failed");
+    if (!response.ok) {
+      toast("Error: login failed");
+      throw new Error("Authentication error: login failed");
+    }
     const data = await response.json();
     const { token } = data;
     localStorage.setItem("token", token);
@@ -75,7 +78,10 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       },
       body: JSON.stringify({ username, email, password }),
     });
-    if (!response.ok) throw new Error("Authentication error: registration failed");
+    if (!response.ok) {
+      toast("Error: registration failed");
+      throw new Error("Authentication error: registration failed");
+    }
     await login(email, password);
   };
 
@@ -88,7 +94,10 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       },
       body: JSON.stringify(updateUserDto),
     });
-    if (!response.ok) throw new Error("Authentication error: failed to update profile");
+    if (!response.ok) {
+      toast("Error: failed to update profile");
+      throw new Error("Authentication error: failed to update profile");
+    }
     const updatedUser = await response.json();
     toast("Account updated successfully.");
     setUser(updatedUser);
@@ -102,7 +111,10 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (!response.ok) throw new Error("Authentication error: failed to delete profile");
+    if (!response.ok) {
+      toast("Error: failed to delete profile");
+      throw new Error("Authentication error: failed to delete profile");
+    }
     toast("Account delete successfully.");
     logout();
   };

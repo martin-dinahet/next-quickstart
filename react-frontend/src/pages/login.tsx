@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth/auth-context";
 import { useNavigate } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -37,24 +39,28 @@ export const LoginPage: React.FC = () => {
           </CardHeader>
           <CardContent>
             <form className="space-y-3" onSubmit={(e: React.FormEvent) => handleLogin(e)}>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="john.doe@mail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="●●●●●●●●●●●"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="space-y-1">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="john.doe@mail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="●●●●●●●●●●●"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
               <Button type="submit" className="w-full">
                 Login
               </Button>
@@ -62,9 +68,9 @@ export const LoginPage: React.FC = () => {
           </CardContent>
           <CardFooter>
             <Button className="w-full" variant="ghost" asChild>
-              <a href="/register">
+              <Link to="/register">
                 First time here? <span className="underline">Register</span>
-              </a>
+              </Link>
             </Button>
           </CardFooter>
         </Card>
