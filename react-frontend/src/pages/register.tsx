@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth/auth-context";
 import { useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const RegisterPage: React.FC = () => {
   const { register } = useAuth();
@@ -75,9 +75,9 @@ export const RegisterPage: React.FC = () => {
           </CardContent>
           <CardFooter>
             <Button className="w-full" variant="ghost" asChild>
-              <Link to="/login">
+              <NavLink to="/login">
                 Already have an account ? <span className="underline">Log In</span>
-              </Link>
+              </NavLink>
             </Button>
           </CardFooter>
         </Card>
