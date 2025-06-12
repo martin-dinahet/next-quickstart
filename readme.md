@@ -41,6 +41,12 @@ pnpm install
 docker compose up -d
 ```
 
+#### Run database migration
+
+```sh
+pnpm prisma migrate dev --name init
+```
+
 ### Development
 
 #### Start the developement server
