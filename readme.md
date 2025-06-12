@@ -1,110 +1,104 @@
-# ⚡ Fullstack App Quickstart
+# Next Quickstart ⚡
 
-A modern fullstack starter built to scale — fast to spin up, easy to extend, and cleanly architected.
-Built by a developer who cares about performance, DX, scalability, and writing code that other devs actually enjoy working with.
+A simple, customizable NextJS starter template to kickstart your projects with best practices.
 
-## 🙋‍♂️ About This Project
+## Features
 
-This isn’t just a toy app. It’s a reflection of how I think about architecture, tooling, and developer experience.
+- NextJS - State of the art fullstack React framework
+- TypeScript + TSX - Strictly typed for better developement experience and safety
+- TailwindCSS - Utility-first CSS framework, NextJS's default option
+- ESLint & Prettier - Code quality and formatting enforcement
+- Prisma - Simple, easy to setup, straight forward ORM with TypeScript in mind
+- Docker - Easily setup your database
+- PostgreSQL - Standard for most projects, fast and stable SQL-like system
 
-I built this to:
+## Getting started
 
-🚀 Set up fullstack apps fast without cutting corners
+### Prerequisites
 
-🔐 Implement secure, scalable auth from day one
+- NodeJS
+- PNPM (or a NodeJS package manager of your choice)
+- Docker (for the database)
 
-⚙️ Lean into type safety, modular design, and clean abstraction layers
+### Installation
 
-🧪 Ship with real testing and CI-readiness — not just “it works on my machine”
-
-🐳 Make local dev feel like production with Dockerized services
-
-This project shows how I approach real-world software: from infra and config to UI/UX and clean API design.
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-Vite + React + TypeScript
-
-TailwindCSS + ShadCN UI for scalable, consistent UI
-
-React Router for SPA routing
-
-pnpm for fast, monorepo-style package management
-
-### Backend
-
-NestJS (modular, testable Node.js framework)
-
-TypeORM + MySQL for persistence
-
-Full-featured Auth with JWT, DTOs, and custom decorators
-
-Dockerized for parity across dev/stage/prod
-
-## 🧠 Skills Demonstrated
-
-### 🏗️ Fullstack Architecture
-
-Built from scratch with clear separation of concerns
-
-Uses domain-driven module structure (auth, users, database)
-
-Abstracted providers for swappable database configs
-
-### 🔐 Security & Auth
-
-Built-in JWT-based sign-in and sign-up
-
-Guards and decorators follow NestJS best practices
-
-Typesafe contracts between client and server
-
-### 🎨 UI/UX Engineering
-
-Reusable UI components built with ShadCN & Tailwind
-
-Route protection and auth context on the frontend
-
-Minimalist, scalable design pattern for layout and navigation
-
-### ⚙️ DevOps & DX
-
-Full Docker setup for frontend, backend, and DB
-
-Zero local config: just docker-compose up --build
-
-Environment variables handled cleanly per service
-
-Thoughtful error handling, logging, and fallback flows
-
-### 🧪 Run It Yourself
+#### Clone the repository
 
 ```sh
-git clone https://github.com/your-username/fullstack-app-quickstart
-cd fullstack-app-quickstart
-docker-compose up --build
+git clone https://github.com/martin-dinahet/next-quickstart.git <your-project-name>
+cd <your-project-name>
 ```
 
-Frontend: http://localhost:5173
+#### Install dependencies
 
-Backend: http://localhost:3000
+```sh
+pnpm install
+```
 
-DB: MySQL (mysql/mysql)
+#### Spin up the docker container
 
-## ✨ Want to Work Together?
+```sh
+docker compose up -d
+```
 
-I build apps like this because I care about code quality, performance, and great UX — not just shipping fast, but shipping well.
+### Development
 
-If you're looking for someone who can:
+#### Start the developement server
 
-Lead or support fullstack app development
+```sh
+pnpm dev
+```
 
-Balance speed with maintainability
+Then, open [localhost:3000](http://localhost:3000) in your browser.
 
-Write clean, scalable TypeScript across the stack
+#### Build for production
 
-Set up CI/CD, testing, Docker, auth, and more…
+```sh
+pnpm build
+```
 
-Let’s talk. This repo isn’t just a project — it’s a sample of how I work.
+#### Linting & formatting
+
+Run ESLint to check linting errors:
+
+```sh
+pnpm lint
+```
+
+Format code with Prettier:
+```sh
+pnpm format
+```
+
+## Directory structure
+
+```
+🗁 .
+├── 🗋 .env
+├── 🗋 .gitignore
+├── 🗋 .docker-compose.yml
+├── 🗋 next-env.d.ts
+├── 🗋 next.config.ts
+├── 🗋 eslint.config.ts
+├── 🗋 package.json
+├── 🗋 pnpm-lock.yaml
+├── 🗋 pnpm-workspace.yaml
+├── 🗋 postcss.config.js
+├── 🗋 readme.md
+├── 🗋 tsconfig.app.json
+├── 🗋 tsconfig.json
+├── 🗁 public
+│   └── 🗋 favicon.ico
+└── 🗁 src
+    ├── 🗋 globals.css
+    ├── 🗁 lib
+    │   └── 🗋 prisma.ts
+    ├── 🗁 services
+    │   └── 🗋 todos.ts
+    └──  🗁 app
+        ├── 🗋 layout.tsx
+        ├── 🗋 page.tsx
+        └── 🗁 api
+            └── 🗁 todos
+                └── 🗋 route.ts
+```
