@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cleanup": "ts-node src/lib/cleanup.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -44,6 +45,7 @@
     "eslint-config-next": "15.3.3",
     "prisma": "^6.9.0",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "tsx": "^4.20.2",
     "typescript": "^5"
   }
