@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write .",
-    "cleanup": "ts-node src/lib/cleanup.ts"
+    "format": "prettier --write ."
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
