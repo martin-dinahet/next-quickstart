@@ -47,6 +47,13 @@ docker compose up -d
 pnpm prisma migrate dev --name init
 ```
 
+#### Seed the database with default data
+
+```sh
+pnpm prisma db seed
+```
+
+
 ### Development
 
 #### Start the developement server
@@ -101,6 +108,8 @@ pnpm format
     │   └── 🗋 prisma.ts
     ├── 🗁 services
     │   └── 🗋 todos.ts
+    ├── 🗁 components
+    │   └── 🗋 todo-list.tsx
     └──  🗁 app
         ├── 🗋 layout.tsx
         ├── 🗋 page.tsx
