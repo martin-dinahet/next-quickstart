@@ -9,9 +9,6 @@
     "lint": "next lint",
     "format": "prettier --write ."
   },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"
