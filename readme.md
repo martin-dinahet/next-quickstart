@@ -29,6 +29,13 @@ git clone https://github.com/martin-dinahet/next-quickstart.git <your-project-na
 cd <your-project-name>
 ```
 
+#### If you prefer a minimal version without example code (barebones), you can also clone the `bare` branch:
+
+```sh
+git clone -b bare https://github.com/martin-dinahet/next-quickstart.git <your-project-name>
+cd <your-project-name>
+```
+
 #### Install dependencies
 
 ```sh
