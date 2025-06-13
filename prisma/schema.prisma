@@ -6,17 +6,3 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-model Todo {
-  id        String      @id @default(uuid())
-  status    TodoStatus  @default(TODO)
-  title     String
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-}
-
-enum TodoStatus {
-  TODO
-  IN_PROGRESS
-  DONE
-}
