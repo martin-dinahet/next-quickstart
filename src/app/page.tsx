@@ -1,9 +1,10 @@
 "use server";
 
+import type { FC } from "react";
 import { TodoList } from "@/components/todo-list";
 import { getTodos } from "@/services/todos";
 
-const HomePage: React.FC = async () => {
+const HomePage: FC = async () => {
   const todos = await getTodos();
 
   return (

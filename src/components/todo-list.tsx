@@ -1,12 +1,13 @@
 "use client";
 
+import type { FC } from "react";
 import { Todo } from "@prisma/client";
 
 type Props = {
   todos: Array<Todo>;
 };
 
-export const TodoList: React.FC<Props> = ({ todos }) => {
+export const TodoList: FC<Props> = ({ todos }) => {
   return (
     <div className="flex w-full flex-col gap-2">
       {todos.map((todo: Todo) => (
