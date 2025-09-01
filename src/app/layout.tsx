@@ -1,15 +1,13 @@
 import "@/globals.css";
+import type { Metadata } from "next";
+import type { FC, PropsWithChildren } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Fullstack App Quickstart",
   description: "Made with <3 by Martin Dinahet",
 };
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const RootLayout: React.FC<Props> = ({ children }) => {
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
       <body className="antialiased">

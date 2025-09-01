@@ -1,96 +1,96 @@
 # Next Quickstart ⚡
 
-A simple, customizable NextJS starter template to kickstart your projects with best practices.
+Un starter NextJS simple et personnalisable pour démarrer rapidement vos projets avec les bonnes pratiques.
 
-## Features
+## Fonctionnalités
 
-- NextJS - State of the art fullstack React framework
-- TypeScript + TSX - Strictly typed for better developement experience and safety
-- TailwindCSS - Utility-first CSS framework, NextJS's default option
-- ESLint & Prettier - Code quality and formatting enforcement
-- Prisma - Simple, easy to setup, straight forward ORM with TypeScript in mind
-- Docker - Easily setup your database
-- PostgreSQL - Standard for most projects, fast and stable SQL-like system
+- NextJS - Framework React fullstack moderne
+- TypeScript + TSX - Typage strict pour une meilleure expérience et plus de sécurité
+- TailwindCSS - Framework CSS utilitaire, choix par défaut de NextJS
+- ESLint & Prettier - Vérification et formatage du code
+- Prisma - ORM facile à configurer, pensé pour TypeScript
+- Docker - Mise en place rapide de la base de données
+- PostgreSQL - Standard fiable, rapide et adapté à la plupart des projets
 
-## Getting started
+## Mise en route
 
-### Prerequisites
+### Prérequis
 
 - NodeJS
-- PNPM (or a NodeJS package manager of your choice)
-- Docker (for the database)
+- PNPM (ou le gestionnaire de paquets de votre choix)
+- Docker (pour la base de données)
 
 ### Installation
 
-#### Clone the repository
+#### Cloner le dépôt
 
 ```sh
-git clone https://github.com/martin-dinahet/next-quickstart.git <your-project-name>
-cd <your-project-name>
+git clone https://github.com/martin-dinahet/next-quickstart.git <nom-du-projet>
+cd <nom-du-projet>
 ```
 
-#### If you prefer a minimal version without example code, you can clone the `bare` branch:
+#### Version minimale sans exemple :
 
 ```sh
-git clone -b bare https://github.com/martin-dinahet/next-quickstart.git <your-project-name>
-cd <your-project-name>
+git clone -b bare https://github.com/martin-dinahet/next-quickstart.git <nom-du-projet>
+cd <nom-du-projet>
 ```
 
-#### Install dependencies
+#### Installer les dépendances
 
 ```sh
 pnpm install
 ```
 
-#### Spin up the docker container
+#### Lancer Docker
 
 ```sh
 docker compose up -d
 ```
 
-#### Run database migration
+#### Appliquer la migration de base de données
 
 ```sh
 pnpm prisma migrate dev --name init
 ```
 
-#### Seed the database with default data
+#### Remplir la base de données avec des données par défaut
 
 ```sh
 pnpm prisma db seed
 ```
 
+### Développement
 
-### Development
-
-#### Start the developement server
+#### Démarrer en mode dev
 
 ```sh
 pnpm dev
 ```
 
-Then, open [localhost:3000](http://localhost:3000) in your browser.
+Puis ouvrez [localhost:3000](http://localhost:3000) dans votre navigateur.
 
-#### Build for production
+#### Build pour la production
 
 ```sh
 pnpm build
 ```
 
-#### Linting & formatting
+#### Linter & formater
 
-Run ESLint to check linting errors:
+Vérifier le code avec ESLint :
 
 ```sh
 pnpm lint
 ```
 
-Format code with Prettier:
+Formater avec Prettier :
+
 ```sh
 pnpm format
 ```
 
-## Directory structure
+## Structure du projet
 
 ```
 🗁 .
